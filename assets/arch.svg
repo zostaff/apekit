@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="470" viewBox="0 0 1260 470">
+<title>apekit architecture: scripts, lib modules, externals</title>
+<defs>
+<radialGradient id="bg" cx="0.5" cy="0" r="1.2"><stop offset="0" stop-color="#2e0508"/><stop offset="0.6" stop-color="#0b0304"/><stop offset="1" stop-color="#050102"/></radialGradient>
+<radialGradient id="halo" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ff2a4d" stop-opacity="0.16"/><stop offset="1" stop-color="#ff2a4d" stop-opacity="0"/></radialGradient>
+<filter id="glow" x="-5%" y="-20%" width="110%" height="140%"><feGaussianBlur stdDeviation="1.3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="bigglow" x="-10%" y="-30%" width="120%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<pattern id="dots" width="8" height="8" patternUnits="userSpaceOnUse"><rect x="3" y="3" width="1.6" height="1.6" fill="#ff2a4d" fill-opacity="0.07"/></pattern>
+<pattern id="scan" width="4" height="3" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#000" fill-opacity="0.3"/></pattern>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#ff2a4d"/></marker>
+<marker id="arrc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#3de8ff"/></marker>
+<marker id="arrm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#ff4fd8"/></marker>
+<marker id="arrd" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#a8656e"/></marker>
+<clipPath id="frame"><rect x="0.5" y="0.5" width="1259" height="469" rx="14"/></clipPath>
+</defs>
+<rect x="0.5" y="0.5" width="1259" height="469" rx="14" fill="url(#bg)"/>
+<g clip-path="url(#frame)">
+<rect width="1260" height="470" fill="url(#dots)"/>
+<g font-family="Menlo,Consolas,'DejaVu Sans Mono','Liberation Mono','Courier New',monospace" xml:space="preserve">
+<g filter="url(#glow)">
+<text y="40.0" font-size="13" font-weight="700"><tspan x="40.0" fill="#ff2a4d">apekit/</tspan><tspan x="118.3" fill="#a8656e">4 scripts → 6 modules → 5 deps</tspan></text>
+<rect x="40.0" y="70.0" width="250.0" height="58.0" rx="8" fill="#120406" fill-opacity="0.85" stroke="#3de8ff" stroke-opacity="0.8" stroke-width="1.4"/>
+<path d="M48.0 70.0 L40.0 70.0 L40.0 78.0 M282.0 70.0 L290.0 70.0 L290.0 78.0 M48.0 128.0 L40.0 128.0 L40.0 120.0 M282.0 128.0 L290.0 128.0 L290.0 120.0" fill="none" stroke="#3de8ff" stroke-width="2.2"/>
+<text y="94.0" font-size="13" font-weight="700"><tspan x="54.0" fill="#3de8ff">bundle.mjs</tspan></text>
+<text y="114.0" font-size="13" font-weight="700"><tspan x="54.0" fill="#a8656e">jito | staggered buys</tspan></text>
+<rect x="350.0" y="70.0" width="250.0" height="58.0" rx="8" fill="#120406" fill-opacity="0.85" stroke="#ff6a3d" stroke-opacity="0.8" stroke-width="1.4"/>
+<path d="M358.0 70.0 L350.0 70.0 L350.0 78.0 M592.0 70.0 L600.0 70.0 L600.0 78.0 M358.0 128.0 L350.0 128.0 L350.0 120.0 M592.0 128.0 L600.0 128.0 L600.0 120.0" fill="none" stroke="#ff6a3d" stroke-width="2.2"/>
+<text y="94.0" font-size="13" font-weight="700"><tspan x="364.0" fill="#ff6a3d">volume.mjs</tspan></text>
+<text y="114.0" font-size="13" font-weight="700"><tspan x="364.0" fill="#a8656e">buy/sell churn</tspan></text>
+<rect x="660.0" y="70.0" width="250.0" height="58.0" rx="8" fill="#120406" fill-opacity="0.85" stroke="#ff9e3d" stroke-opacity="0.8" stroke-width="1.4"/>
+<path d="M668.0 70.0 L660.0 70.0 L660.0 78.0 M902.0 70.0 L910.0 70.0 L910.0 78.0 M668.0 128.0 L660.0 128.0 L660.0 120.0 M902.0 128.0 L910.0 128.0 L910.0 120.0" fill="none" stroke="#ff9e3d" stroke-width="2.2"/>
+<text y="94.0" font-size="13" font-weight="700"><tspan x="674.0" fill="#ff9e3d">sell.mjs</tspan></text>
+<text y="114.0" font-size="13" font-weight="700"><tspan x="674.0" fill="#a8656e">sell every bag</tspan></text>
+<rect x="970.0" y="70.0" width="250.0" height="58.0" rx="8" fill="#120406" fill-opacity="0.85" stroke="#ff4fd8" stroke-opacity="0.8" stroke-width="1.4"/>
+<path d="M978.0 70.0 L970.0 70.0 L970.0 78.0 M1212.0 70.0 L1220.0 70.0 L1220.0 78.0 M978.0 128.0 L970.0 128.0 L970.0 120.0 M1212.0 128.0 L1220.0 128.0 L1220.0 120.0" fill="none" stroke="#ff4fd8" stroke-width="2.2"/>
+<text y="94.0" font-size="13" font-weight="700"><tspan x="984.0" fill="#ff4fd8">drain.mjs</tspan></text>
+<text y="114.0" font-size="13" font-weight="700"><tspan x="984.0" fill="#a8656e">sweep SOL home</tspan></text>
+<rect x="40.0" y="220.0" width="170.0" height="58.0" rx="8" fill="#120406" fill-opacity="0.85" stroke="#ff7a8c" stroke-opacity="0.8" stroke-width="1.4"/>
+<path d="M48.0 220.0 L40.0 220.0 L40.0 228.0 M202.0 220.0 L210.0 220.0 L210.0 228.0 M48.0 278.0 L40.0 278.0 L40.0 270.0 M202.0 278.0 L210.0 278.0 L210.0 270.0" fill="none" stroke="#ff7a8c" stroke-width="2.2"/>
+<text y="244.0" font-size="13" font-weight="700"><tspan x="54.0" fill="#ff7a8c">wallets.mjs</tspan></text>
+<text y="264.0" font-size="13" font-weight="700"><tspan x="54.0" fill="#a8656e">keypairs</tspan></text>
+<rect x="242.0" y="220.0" width="170.0" height="58.0" rx="8" fill="#120406" fill-opacity="0.85" stroke="#ff7a8c" stroke-opacity="0.8" stroke-width="1.4"/>
+<path d="M250.0 220.0 L242.0 220.0 L242.0 228.0 M404.0 220.0 L412.0 220.0 L412.0 228.0 M250.0 278.0 L242.0 278.0 L242.0 270.0 M404.0 278.0 L412.0 278.0 L412.0 270.0" fill="none" stroke="#ff7a8c" stroke-width="2.2"/>
+<text y="244.0" font-size="13" font-weight="700"><tspan x="256.0" fill="#ff7a8c">utils.mjs</tspan></text>
+<text y="264.0" font-size="13" font-weight="700"><tspan x="256.0" fill="#a8656e">retry, fees</tspan></text>
+<rect x="444.0" y="220.0" width="170.0" height="58.0" rx="8" fill="#120406" fill-opacity="0.85" stroke="#ff7a8c" stroke-opacity="0.8" stroke-width="1.4"/>
+<path d="M452.0 220.0 L444.0 220.0 L444.0 228.0 M606.0 220.0 L614.0 220.0 L614.0 228.0 M452.0 278.0 L444.0 278.0 L444.0 270.0 M606.0 278.0 L614.0 278.0 L614.0 270.0" fill="none" stroke="#ff7a8c" stroke-width="2.2"/>
+<text y="244.0" font-size="13" font-weight="700"><tspan x="458.0" fill="#ff7a8c">tx.mjs</tspan></text>
+<text y="264.0" font-size="13" font-weight="700"><tspan x="458.0" fill="#a8656e">build + send</tspan></text>
+<rect x="646.0" y="220.0" width="170.0" height="58.0" rx="8" fill="#120406" fill-opacity="0.85" stroke="#ff7a8c" stroke-opacity="0.8" stroke-width="1.4"/>
+<path d="M654.0 220.0 L646.0 220.0 L646.0 228.0 M808.0 220.0 L816.0 220.0 L816.0 228.0 M654.0 278.0 L646.0 278.0 L646.0 270.0 M808.0 278.0 L816.0 278.0 L816.0 270.0" fill="none" stroke="#ff7a8c" stroke-width="2.2"/>
+<text y="244.0" font-size="13" font-weight="700"><tspan x="660.0" fill="#ff7a8c">jito.mjs</tspan></text>
+<text y="264.0" font-size="13" font-weight="700"><tspan x="660.0" fill="#a8656e">bundle + poll</tspan></text>
+<rect x="848.0" y="220.0" width="170.0" height="58.0" rx="8" fill="#120406" fill-opacity="0.85" stroke="#ff7a8c" stroke-opacity="0.8" stroke-width="1.4"/>
+<path d="M856.0 220.0 L848.0 220.0 L848.0 228.0 M1010.0 220.0 L1018.0 220.0 L1018.0 228.0 M856.0 278.0 L848.0 278.0 L848.0 270.0 M1010.0 278.0 L1018.0 278.0 L1018.0 270.0" fill="none" stroke="#ff7a8c" stroke-width="2.2"/>
+<text y="244.0" font-size="13" font-weight="700"><tspan x="862.0" fill="#ff7a8c">fund.mjs</tspan></text>
+<text y="264.0" font-size="13" font-weight="700"><tspan x="862.0" fill="#a8656e">fund + drain</tspan></text>
+<rect x="1050.0" y="220.0" width="170.0" height="58.0" rx="8" fill="#120406" fill-opacity="0.85" stroke="#ff7a8c" stroke-opacity="0.8" stroke-width="1.4"/>
+<path d="M1058.0 220.0 L1050.0 220.0 L1050.0 228.0 M1212.0 220.0 L1220.0 220.0 L1220.0 228.0 M1058.0 278.0 L1050.0 278.0 L1050.0 270.0 M1212.0 278.0 L1220.0 278.0 L1220.0 270.0" fill="none" stroke="#ff7a8c" stroke-width="2.2"/>
+<text y="244.0" font-size="13" font-weight="700"><tspan x="1064.0" fill="#ff7a8c">constants.mjs</tspan></text>
+<text y="264.0" font-size="13" font-weight="700"><tspan x="1064.0" fill="#a8656e">config</tspan></text>
+<rect x="40.0" y="370.0" width="210.0" height="58.0" rx="8" fill="#120406" fill-opacity="0.85" stroke="#ff7a8c" stroke-opacity="0.8" stroke-width="1.4"/>
+<path d="M48.0 370.0 L40.0 370.0 L40.0 378.0 M242.0 370.0 L250.0 370.0 L250.0 378.0 M48.0 428.0 L40.0 428.0 L40.0 420.0 M242.0 428.0 L250.0 428.0 L250.0 420.0" fill="none" stroke="#ff7a8c" stroke-width="2.2"/>
+<text y="394.0" font-size="13" font-weight="700"><tspan x="54.0" fill="#ff7a8c">@pump-fun/pump-sdk</tspan></text>
+<text y="414.0" font-size="13" font-weight="700"><tspan x="54.0" fill="#a8656e">curve maths + ix</tspan></text>
+<rect x="282.5" y="370.0" width="210.0" height="58.0" rx="8" fill="#120406" fill-opacity="0.85" stroke="#ff7a8c" stroke-opacity="0.8" stroke-width="1.4"/>
+<path d="M290.5 370.0 L282.5 370.0 L282.5 378.0 M484.5 370.0 L492.5 370.0 L492.5 378.0 M290.5 428.0 L282.5 428.0 L282.5 420.0 M484.5 428.0 L492.5 428.0 L492.5 420.0" fill="none" stroke="#ff7a8c" stroke-width="2.2"/>
+<text y="394.0" font-size="13" font-weight="700"><tspan x="296.5" fill="#ff7a8c">@solana/web3.js</tspan></text>
+<text y="414.0" font-size="13" font-weight="700"><tspan x="296.5" fill="#a8656e">rpc + tx</tspan></text>
+<rect x="525.0" y="370.0" width="210.0" height="58.0" rx="8" fill="#120406" fill-opacity="0.85" stroke="#ff7a8c" stroke-opacity="0.8" stroke-width="1.4"/>
+<path d="M533.0 370.0 L525.0 370.0 L525.0 378.0 M727.0 370.0 L735.0 370.0 L735.0 378.0 M533.0 428.0 L525.0 428.0 L525.0 420.0 M727.0 428.0 L735.0 428.0 L735.0 420.0" fill="none" stroke="#ff7a8c" stroke-width="2.2"/>
+<text y="394.0" font-size="13" font-weight="700"><tspan x="539.0" fill="#ff7a8c">@solana/spl-token</tspan></text>
+<text y="414.0" font-size="13" font-weight="700"><tspan x="539.0" fill="#a8656e">token ops</tspan></text>
+<rect x="767.5" y="370.0" width="210.0" height="58.0" rx="8" fill="#120406" fill-opacity="0.85" stroke="#ff7a8c" stroke-opacity="0.8" stroke-width="1.4"/>
+<path d="M775.5 370.0 L767.5 370.0 L767.5 378.0 M969.5 370.0 L977.5 370.0 L977.5 378.0 M775.5 428.0 L767.5 428.0 L767.5 420.0 M969.5 428.0 L977.5 428.0 L977.5 420.0" fill="none" stroke="#ff7a8c" stroke-width="2.2"/>
+<text y="394.0" font-size="13" font-weight="700"><tspan x="781.5" fill="#ff7a8c">jito block engine</tspan></text>
+<text y="414.0" font-size="13" font-weight="700"><tspan x="781.5" fill="#a8656e">3 regions</tspan></text>
+<rect x="1010.0" y="370.0" width="210.0" height="58.0" rx="8" fill="#120406" fill-opacity="0.85" stroke="#ff7a8c" stroke-opacity="0.8" stroke-width="1.4"/>
+<path d="M1018.0 370.0 L1010.0 370.0 L1010.0 378.0 M1212.0 370.0 L1220.0 370.0 L1220.0 378.0 M1018.0 428.0 L1010.0 428.0 L1010.0 420.0 M1212.0 428.0 L1220.0 428.0 L1220.0 420.0" fill="none" stroke="#ff7a8c" stroke-width="2.2"/>
+<text y="394.0" font-size="13" font-weight="700"><tspan x="1024.0" fill="#ff7a8c">bs58 · bn.js</tspan></text>
+<text y="414.0" font-size="13" font-weight="700"><tspan x="1024.0" fill="#a8656e">encoding</tspan></text>
+<text y="62.0" font-size="13" font-weight="700"><tspan x="1165.2" fill="#5c2c33">scripts</tspan></text>
+<text y="212.0" font-size="13" font-weight="700"><tspan x="1188.7" fill="#5c2c33">lib/</tspan></text>
+<text y="362.0" font-size="13" font-weight="700"><tspan x="1188.7" fill="#5c2c33">deps</tspan></text>
+<path d="M165.0 130 C165.0 174.0 125.0 174.0 125.0 216" fill="none" stroke="#3de8ff" stroke-opacity="0.35" stroke-width="1.2" marker-end="url(#arrd)"/>
+<path d="M165.0 130 C165.0 174.0 327.0 174.0 327.0 216" fill="none" stroke="#3de8ff" stroke-opacity="0.35" stroke-width="1.2" marker-end="url(#arrd)"/>
+<path d="M165.0 130 C165.0 174.0 529.0 174.0 529.0 216" fill="none" stroke="#3de8ff" stroke-opacity="0.35" stroke-width="1.2" marker-end="url(#arrd)"/>
+<path d="M165.0 130 C165.0 174.0 731.0 174.0 731.0 216" fill="none" stroke="#3de8ff" stroke-opacity="0.35" stroke-width="1.2" marker-end="url(#arrd)"/>
+<path d="M165.0 130 C165.0 174.0 933.0 174.0 933.0 216" fill="none" stroke="#3de8ff" stroke-opacity="0.35" stroke-width="1.2" marker-end="url(#arrd)"/>
+<path d="M475.0 130 C475.0 174.0 125.0 174.0 125.0 216" fill="none" stroke="#ff6a3d" stroke-opacity="0.35" stroke-width="1.2" marker-end="url(#arrd)"/>
+<path d="M475.0 130 C475.0 174.0 327.0 174.0 327.0 216" fill="none" stroke="#ff6a3d" stroke-opacity="0.35" stroke-width="1.2" marker-end="url(#arrd)"/>
+<path d="M475.0 130 C475.0 174.0 529.0 174.0 529.0 216" fill="none" stroke="#ff6a3d" stroke-opacity="0.35" stroke-width="1.2" marker-end="url(#arrd)"/>
+<path d="M475.0 130 C475.0 174.0 933.0 174.0 933.0 216" fill="none" stroke="#ff6a3d" stroke-opacity="0.35" stroke-width="1.2" marker-end="url(#arrd)"/>
+<path d="M475.0 130 C475.0 174.0 1135.0 174.0 1135.0 216" fill="none" stroke="#ff6a3d" stroke-opacity="0.35" stroke-width="1.2" marker-end="url(#arrd)"/>
+<path d="M785.0 130 C785.0 174.0 125.0 174.0 125.0 216" fill="none" stroke="#ff9e3d" stroke-opacity="0.35" stroke-width="1.2" marker-end="url(#arrd)"/>
+<path d="M785.0 130 C785.0 174.0 327.0 174.0 327.0 216" fill="none" stroke="#ff9e3d" stroke-opacity="0.35" stroke-width="1.2" marker-end="url(#arrd)"/>
+<path d="M785.0 130 C785.0 174.0 529.0 174.0 529.0 216" fill="none" stroke="#ff9e3d" stroke-opacity="0.35" stroke-width="1.2" marker-end="url(#arrd)"/>
+<path d="M785.0 130 C785.0 174.0 933.0 174.0 933.0 216" fill="none" stroke="#ff9e3d" stroke-opacity="0.35" stroke-width="1.2" marker-end="url(#arrd)"/>
+<path d="M785.0 130 C785.0 174.0 1135.0 174.0 1135.0 216" fill="none" stroke="#ff9e3d" stroke-opacity="0.35" stroke-width="1.2" marker-end="url(#arrd)"/>
+<path d="M1095.0 130 C1095.0 174.0 125.0 174.0 125.0 216" fill="none" stroke="#ff4fd8" stroke-opacity="0.35" stroke-width="1.2" marker-end="url(#arrd)"/>
+<path d="M1095.0 130 C1095.0 174.0 933.0 174.0 933.0 216" fill="none" stroke="#ff4fd8" stroke-opacity="0.35" stroke-width="1.2" marker-end="url(#arrd)"/>
+<path d="M529.0 280 C529.0 324.0 145.0 324.0 145.0 366" fill="none" stroke="#ff7a8c" stroke-opacity="0.3" stroke-width="1.2" marker-end="url(#arrd)"/>
+<path d="M529.0 280 C529.0 324.0 387.5 324.0 387.5 366" fill="none" stroke="#ff7a8c" stroke-opacity="0.3" stroke-width="1.2" marker-end="url(#arrd)"/>
+<path d="M529.0 280 C529.0 324.0 630.0 324.0 630.0 366" fill="none" stroke="#ff7a8c" stroke-opacity="0.3" stroke-width="1.2" marker-end="url(#arrd)"/>
+<path d="M731.0 280 C731.0 324.0 872.5 324.0 872.5 366" fill="none" stroke="#ff7a8c" stroke-opacity="0.3" stroke-width="1.2" marker-end="url(#arrd)"/>
+<path d="M731.0 280 C731.0 324.0 1115.0 324.0 1115.0 366" fill="none" stroke="#ff7a8c" stroke-opacity="0.3" stroke-width="1.2" marker-end="url(#arrd)"/>
+<path d="M125.0 280 C125.0 324.0 1115.0 324.0 1115.0 366" fill="none" stroke="#ff7a8c" stroke-opacity="0.3" stroke-width="1.2" marker-end="url(#arrd)"/>
+<path d="M327.0 280 C327.0 324.0 387.5 324.0 387.5 366" fill="none" stroke="#ff7a8c" stroke-opacity="0.3" stroke-width="1.2" marker-end="url(#arrd)"/>
+<path d="M933.0 280 C933.0 324.0 387.5 324.0 387.5 366" fill="none" stroke="#ff7a8c" stroke-opacity="0.3" stroke-width="1.2" marker-end="url(#arrd)"/>
+</g>
+</g></g><rect x="0.5" y="0.5" width="1259" height="469" rx="14" fill="url(#scan)" stroke="#571520"/></svg>

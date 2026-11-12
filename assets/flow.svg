@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="470" viewBox="0 0 1260 470">
+<title>apekit bundler pipeline: master, fund wallets, jito bundle, sell, drain</title>
+<defs>
+<radialGradient id="bg" cx="0.5" cy="0" r="1.2"><stop offset="0" stop-color="#2e0508"/><stop offset="0.6" stop-color="#0b0304"/><stop offset="1" stop-color="#050102"/></radialGradient>
+<radialGradient id="halo" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ff2a4d" stop-opacity="0.16"/><stop offset="1" stop-color="#ff2a4d" stop-opacity="0"/></radialGradient>
+<filter id="glow" x="-5%" y="-20%" width="110%" height="140%"><feGaussianBlur stdDeviation="1.3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="bigglow" x="-10%" y="-30%" width="120%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<pattern id="dots" width="8" height="8" patternUnits="userSpaceOnUse"><rect x="3" y="3" width="1.6" height="1.6" fill="#ff2a4d" fill-opacity="0.07"/></pattern>
+<pattern id="scan" width="4" height="3" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#000" fill-opacity="0.3"/></pattern>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#ff2a4d"/></marker>
+<marker id="arrc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#3de8ff"/></marker>
+<marker id="arrm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#ff4fd8"/></marker>
+<marker id="arrd" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#a8656e"/></marker>
+<clipPath id="frame"><rect x="0.5" y="0.5" width="1259" height="469" rx="14"/></clipPath>
+</defs>
+<rect x="0.5" y="0.5" width="1259" height="469" rx="14" fill="url(#bg)"/>
+<g clip-path="url(#frame)">
+<rect width="1260" height="470" fill="url(#dots)"/>
+<g font-family="Menlo,Consolas,'DejaVu Sans Mono','Liberation Mono','Courier New',monospace" xml:space="preserve">
+<g filter="url(#glow)">
+<text y="40.0" font-size="13" font-weight="700"><tspan x="40.0" fill="#ff2a4d">bundler pipeline</tspan><tspan x="188.8" fill="#a8656e">master → fund → bundle → sell → drain</tspan></text>
+<text y="40.0" font-size="13" font-weight="700"><tspan x="961.6" fill="#5c2c33">bundle.mjs · sell.mjs · drain.mjs</tspan></text>
+<rect x="40.0" y="78.0" width="206.0" height="92.0" rx="8" fill="#120406" fill-opacity="0.85" stroke="#ff2a4d" stroke-opacity="0.8" stroke-width="1.4"/>
+<path d="M50.0 78.0 L40.0 78.0 L40.0 88.0 M236.0 78.0 L246.0 78.0 L246.0 88.0 M50.0 170.0 L40.0 170.0 L40.0 160.0 M236.0 170.0 L246.0 170.0 L246.0 160.0" fill="none" stroke="#ff2a4d" stroke-width="2.2"/>
+<text y="106.0" font-size="15" font-weight="700"><tspan x="56.0" fill="#5c2c33">01 </tspan><tspan x="83.1" fill="#ff2a4d">MASTER</tspan></text>
+<text y="130.0" font-size="13" font-weight="700"><tspan x="56.0" fill="#ffe6e9">MASTER_KEY in .env</tspan></text>
+<text y="150.0" font-size="13" font-weight="700"><tspan x="56.0" fill="#a8656e">pays for the run</tspan></text>
+<path d="M250 124.0 L279 124.0" fill="none" stroke="#ff2a4d" stroke-opacity="0.85" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="40.0" y="188.0" width="206.0" height="56.0" rx="6" fill="#120406" fill-opacity="0.85" stroke="#ff2a4d" stroke-opacity="0.25" stroke-width="1.4" stroke-dasharray="3 3"/>
+<text y="210.0" font-size="13" font-weight="700"><tspan x="54.0" fill="#ff2a4d">› </tspan><tspan x="69.7" fill="#a8656e">needs budget × 1.3</tspan></text>
+<text y="230.0" font-size="13" font-weight="700"><tspan x="54.0" fill="#ff2a4d">› </tspan><tspan x="69.7" fill="#a8656e">aborts if short</tspan></text>
+<rect x="283.0" y="78.0" width="206.0" height="92.0" rx="8" fill="#120406" fill-opacity="0.85" stroke="#ff7a8c" stroke-opacity="0.8" stroke-width="1.4"/>
+<path d="M293.0 78.0 L283.0 78.0 L283.0 88.0 M479.0 78.0 L489.0 78.0 L489.0 88.0 M293.0 170.0 L283.0 170.0 L283.0 160.0 M479.0 170.0 L489.0 170.0 L489.0 160.0" fill="none" stroke="#ff7a8c" stroke-width="2.2"/>
+<text y="106.0" font-size="15" font-weight="700"><tspan x="299.0" fill="#5c2c33">02 </tspan><tspan x="326.1" fill="#ff7a8c">FUND WALLETS</tspan></text>
+<text y="130.0" font-size="13" font-weight="700"><tspan x="299.0" fill="#ffe6e9">generateWallets(N)</tspan></text>
+<text y="150.0" font-size="13" font-weight="700"><tspan x="299.0" fill="#a8656e">fresh keypairs</tspan></text>
+<path d="M493 124.0 L522 124.0" fill="none" stroke="#ff7a8c" stroke-opacity="0.85" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="283.0" y="188.0" width="206.0" height="56.0" rx="6" fill="#120406" fill-opacity="0.85" stroke="#ff7a8c" stroke-opacity="0.25" stroke-width="1.4" stroke-dasharray="3 3"/>
+<text y="210.0" font-size="13" font-weight="700"><tspan x="297.0" fill="#ff7a8c">› </tspan><tspan x="312.7" fill="#a8656e">≤10 transfers / tx</tspan></text>
+<text y="230.0" font-size="13" font-weight="700"><tspan x="297.0" fill="#ff7a8c">› </tspan><tspan x="312.7" fill="#a8656e">settle 2s</tspan></text>
+<rect x="526.0" y="78.0" width="206.0" height="92.0" rx="8" fill="#120406" fill-opacity="0.85" stroke="#3de8ff" stroke-opacity="0.8" stroke-width="1.4"/>
+<path d="M536.0 78.0 L526.0 78.0 L526.0 88.0 M722.0 78.0 L732.0 78.0 L732.0 88.0 M536.0 170.0 L526.0 170.0 L526.0 160.0 M722.0 170.0 L732.0 170.0 L732.0 160.0" fill="none" stroke="#3de8ff" stroke-width="2.2"/>
+<text y="106.0" font-size="15" font-weight="700"><tspan x="542.0" fill="#5c2c33">03 </tspan><tspan x="569.1" fill="#3de8ff">JITO BUNDLE</tspan></text>
+<text y="130.0" font-size="13" font-weight="700"><tspan x="542.0" fill="#ffe6e9">buildBuyTx × N</tspan></text>
+<text y="150.0" font-size="13" font-weight="700"><tspan x="542.0" fill="#a8656e">pump-sdk · 600k CU</tspan></text>
+<path d="M736 124.0 L765 124.0" fill="none" stroke="#3de8ff" stroke-opacity="0.85" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="526.0" y="188.0" width="206.0" height="56.0" rx="6" fill="#120406" fill-opacity="0.85" stroke="#3de8ff" stroke-opacity="0.25" stroke-width="1.4" stroke-dasharray="3 3"/>
+<text y="210.0" font-size="13" font-weight="700"><tspan x="540.0" fill="#3de8ff">› </tspan><tspan x="555.7" fill="#a8656e">≤4 buys + tip tx</tspan></text>
+<text y="230.0" font-size="13" font-weight="700"><tspan x="540.0" fill="#3de8ff">› </tspan><tspan x="555.7" fill="#a8656e">5 attempts, tip ↑</tspan></text>
+<rect x="769.0" y="78.0" width="206.0" height="92.0" rx="8" fill="#120406" fill-opacity="0.85" stroke="#ff9e3d" stroke-opacity="0.8" stroke-width="1.4"/>
+<path d="M779.0 78.0 L769.0 78.0 L769.0 88.0 M965.0 78.0 L975.0 78.0 L975.0 88.0 M779.0 170.0 L769.0 170.0 L769.0 160.0 M965.0 170.0 L975.0 170.0 L975.0 160.0" fill="none" stroke="#ff9e3d" stroke-width="2.2"/>
+<text y="106.0" font-size="15" font-weight="700"><tspan x="785.0" fill="#5c2c33">04 </tspan><tspan x="812.1" fill="#ff9e3d">SELL</tspan></text>
+<text y="130.0" font-size="13" font-weight="700"><tspan x="785.0" fill="#ffe6e9">data/wallets.json</tspan></text>
+<text y="150.0" font-size="13" font-weight="700"><tspan x="785.0" fill="#a8656e">sell full balance</tspan></text>
+<path d="M979 124.0 L1008 124.0" fill="none" stroke="#ff9e3d" stroke-opacity="0.85" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="769.0" y="188.0" width="206.0" height="56.0" rx="6" fill="#120406" fill-opacity="0.85" stroke="#ff9e3d" stroke-opacity="0.25" stroke-width="1.4" stroke-dasharray="3 3"/>
+<text y="210.0" font-size="13" font-weight="700"><tspan x="783.0" fill="#ff9e3d">› </tspan><tspan x="798.7" fill="#a8656e">top-up gas if dry</tspan></text>
+<text y="230.0" font-size="13" font-weight="700"><tspan x="783.0" fill="#ff9e3d">› </tspan><tspan x="798.7" fill="#a8656e">per-wallet send</tspan></text>
+<rect x="1012.0" y="78.0" width="206.0" height="92.0" rx="8" fill="#120406" fill-opacity="0.85" stroke="#ff4fd8" stroke-opacity="0.8" stroke-width="1.4"/>
+<path d="M1022.0 78.0 L1012.0 78.0 L1012.0 88.0 M1208.0 78.0 L1218.0 78.0 L1218.0 88.0 M1022.0 170.0 L1012.0 170.0 L1012.0 160.0 M1208.0 170.0 L1218.0 170.0 L1218.0 160.0" fill="none" stroke="#ff4fd8" stroke-width="2.2"/>
+<text y="106.0" font-size="15" font-weight="700"><tspan x="1028.0" fill="#5c2c33">05 </tspan><tspan x="1055.1" fill="#ff4fd8">DRAIN</tspan></text>
+<text y="130.0" font-size="13" font-weight="700"><tspan x="1028.0" fill="#ffe6e9">drainWallets()</tspan></text>
+<text y="150.0" font-size="13" font-weight="700"><tspan x="1028.0" fill="#a8656e">sweep SOL → master</tspan></text>
+<rect x="1012.0" y="188.0" width="206.0" height="56.0" rx="6" fill="#120406" fill-opacity="0.85" stroke="#ff4fd8" stroke-opacity="0.25" stroke-width="1.4" stroke-dasharray="3 3"/>
+<text y="210.0" font-size="13" font-weight="700"><tspan x="1026.0" fill="#ff4fd8">› </tspan><tspan x="1041.7" fill="#a8656e">5 in parallel</tspan></text>
+<text y="230.0" font-size="13" font-weight="700"><tspan x="1026.0" fill="#ff4fd8">› </tspan><tspan x="1041.7" fill="#a8656e">keeps fee reserve</tspan></text>
+<path d="M629.0 246 L629.0 278" fill="none" stroke="#3de8ff" stroke-opacity="0.7" stroke-width="1.5"/>
+<path d="M429.0 278 L829.0 278" fill="none" stroke="#3de8ff" stroke-opacity="0.7" stroke-width="1.5"/>
+<path d="M429.0 278 L429.0 300" fill="none" stroke="#3de8ff" stroke-opacity="0.7" stroke-width="1.5" marker-end="url(#arrc)"/>
+<rect x="390.6" y="302.0" width="76.8" height="28.0" rx="5" fill="#120406" fill-opacity="0.85" stroke="#3de8ff" stroke-opacity="0.7" stroke-width="1.4"/>
+<text y="321.0" font-size="13" font-weight="700"><tspan x="401.6" fill="#3de8ff">mainnet</tspan></text>
+<path d="M629.0 278 L629.0 300" fill="none" stroke="#3de8ff" stroke-opacity="0.7" stroke-width="1.5" marker-end="url(#arrc)"/>
+<rect x="582.8" y="302.0" width="92.5" height="28.0" rx="5" fill="#120406" fill-opacity="0.85" stroke="#3de8ff" stroke-opacity="0.7" stroke-width="1.4"/>
+<text y="321.0" font-size="13" font-weight="700"><tspan x="593.8" fill="#3de8ff">amsterdam</tspan></text>
+<path d="M829.0 278 L829.0 300" fill="none" stroke="#3de8ff" stroke-opacity="0.7" stroke-width="1.5" marker-end="url(#arrc)"/>
+<rect x="798.4" y="302.0" width="61.1" height="28.0" rx="5" fill="#120406" fill-opacity="0.85" stroke="#3de8ff" stroke-opacity="0.7" stroke-width="1.4"/>
+<text y="321.0" font-size="13" font-weight="700"><tspan x="809.4" fill="#3de8ff">tokyo</tspan></text>
+<text y="354.0" font-size="13" font-weight="700"><tspan x="515.5" fill="#5c2c33">block engines hit in parallel</tspan></text>
+<rect x="339.0" y="374.0" width="270.0" height="64.0" rx="8" fill="#120406" fill-opacity="0.85" stroke="#3de8ff" stroke-opacity="0.6" stroke-width="1.4"/>
+<text y="398.0" font-size="13" font-weight="700"><tspan x="353.0" fill="#3de8ff">poll </tspan><tspan x="392.1" fill="#ffe6e9">getInflightBundleStatuses</tspan></text>
+<text y="420.0" font-size="13" font-weight="700"><tspan x="368.7" fill="#5c2c33">└ </tspan><tspan x="384.3" fill="#a8656e">getBundleStatuses fallback</tspan></text>
+<rect x="649.0" y="374.0" width="270.0" height="64.0" rx="8" fill="#120406" fill-opacity="0.85" stroke="#ffb347" stroke-opacity="0.6" stroke-width="1.4" stroke-dasharray="4 3"/>
+<text y="398.0" font-size="13" font-weight="700"><tspan x="663.0" fill="#ffb347">fallback </tspan><tspan x="733.5" fill="#ffe6e9">after 5 misses</tspan></text>
+<text y="420.0" font-size="13" font-weight="700"><tspan x="678.7" fill="#5c2c33">└ </tspan><tspan x="694.3" fill="#a8656e">individual sends</tspan></text>
+<path d="M474.0 362 L474.0 370" fill="none" stroke="#3de8ff" stroke-opacity="0.5" stroke-width="1.5" stroke-dasharray="2 3" marker-end="url(#arrc)"/>
+<path d="M784.0 362 L784.0 370" fill="none" stroke="#ffb347" stroke-opacity="0.5" stroke-width="1.5" stroke-dasharray="2 3"/>
+<text y="290.0" font-size="13" font-weight="700"><tspan x="40.0" fill="#a8656e">mode</tspan></text>
+<text y="314.0" font-size="13" font-weight="700"><tspan x="40.0" fill="#3de8ff">jito      </tspan><tspan x="118.3" fill="#ffe6e9">atomic, 1 block</tspan></text>
+<text y="336.0" font-size="13" font-weight="700"><tspan x="40.0" fill="#ffb347">staggered </tspan><tspan x="118.3" fill="#ffe6e9">2-5s random gaps</tspan></text>
+<text y="370.0" font-size="13" font-weight="700"><tspan x="40.0" fill="#a8656e">tip</tspan></text>
+<text y="394.0" font-size="13" font-weight="700"><tspan x="40.0" fill="#ff2a4d">0.001</tspan><tspan x="87.0" fill="#5c2c33">→ </tspan><tspan x="102.6" fill="#ff2a4d">0.005 SOL</tspan></text>
+<text y="416.0" font-size="13" font-weight="700"><tspan x="40.0" fill="#5c2c33">+0.001 per retry, cap 0.01</tspan></text>
+<text y="290.0" font-size="13" font-weight="700"><tspan x="1180.8" fill="#a8656e">state</tspan></text>
+<text y="314.0" font-size="13" font-weight="700"><tspan x="1086.9" fill="#ffe6e9">data/wallets.json</tspan></text>
+<text y="336.0" font-size="13" font-weight="700"><tspan x="1055.6" fill="#5c2c33">keys + mint persisted</tspan></text>
+<text y="370.0" font-size="13" font-weight="700"><tspan x="1188.7" fill="#a8656e">fees</tspan></text>
+<text y="394.0" font-size="13" font-weight="700"><tspan x="1032.1" fill="#ffe6e9">p75 priority, cached 10s</tspan></text>
+<text y="416.0" font-size="13" font-weight="700"><tspan x="1039.9" fill="#5c2c33">600k CU · token-2022 ok</tspan></text>
+<path d="M1115.0 76 L1115.0 62 L143.0 62 L143.0 74" fill="none" stroke="#ff4fd8" stroke-opacity="0.6" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrm)"/>
+<rect x="509.0" y="53" width="240" height="18" fill="#0b0304"/>
+<text y="66.5" font-size="13" font-weight="700"><tspan x="535.0" fill="#ff4fd8">SOL flows back to master</tspan></text>
+</g>
+</g></g><rect x="0.5" y="0.5" width="1259" height="469" rx="14" fill="url(#scan)" stroke="#571520"/></svg>

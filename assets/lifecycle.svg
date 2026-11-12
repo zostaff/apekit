@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="380" viewBox="0 0 1260 380">
+<title>wallet lifecycle: fresh, funded, holding, sold, drained</title>
+<defs>
+<radialGradient id="bg" cx="0.5" cy="0" r="1.2"><stop offset="0" stop-color="#2e0508"/><stop offset="0.6" stop-color="#0b0304"/><stop offset="1" stop-color="#050102"/></radialGradient>
+<radialGradient id="halo" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ff2a4d" stop-opacity="0.16"/><stop offset="1" stop-color="#ff2a4d" stop-opacity="0"/></radialGradient>
+<filter id="glow" x="-5%" y="-20%" width="110%" height="140%"><feGaussianBlur stdDeviation="1.3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="bigglow" x="-10%" y="-30%" width="120%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<pattern id="dots" width="8" height="8" patternUnits="userSpaceOnUse"><rect x="3" y="3" width="1.6" height="1.6" fill="#ff2a4d" fill-opacity="0.07"/></pattern>
+<pattern id="scan" width="4" height="3" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#000" fill-opacity="0.3"/></pattern>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#ff2a4d"/></marker>
+<marker id="arrc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#3de8ff"/></marker>
+<marker id="arrm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#ff4fd8"/></marker>
+<marker id="arrd" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#a8656e"/></marker>
+<clipPath id="frame"><rect x="0.5" y="0.5" width="1259" height="379" rx="14"/></clipPath>
+</defs>
+<rect x="0.5" y="0.5" width="1259" height="379" rx="14" fill="url(#bg)"/>
+<g clip-path="url(#frame)">
+<rect width="1260" height="380" fill="url(#dots)"/>
+<g font-family="Menlo,Consolas,'DejaVu Sans Mono','Liberation Mono','Courier New',monospace" xml:space="preserve">
+<g filter="url(#glow)">
+<text y="40.0" font-size="13" font-weight="700"><tspan x="40.0" fill="#ff2a4d">wallet lifecycle</tspan><tspan x="188.8" fill="#a8656e">what every generated keypair goes through</tspan></text>
+<text y="40.0" font-size="13" font-weight="700"><tspan x="1000.8" fill="#5c2c33">tracked in data/wallets.json</tspan></text>
+<rect x="40.0" y="80.0" width="206.0" height="210.0" rx="8" fill="#120406" fill-opacity="0.85" stroke="#5c2c33" stroke-opacity="0.8" stroke-width="1.4"/>
+<path d="M50.0 80.0 L40.0 80.0 L40.0 90.0 M236.0 80.0 L246.0 80.0 L246.0 90.0 M50.0 290.0 L40.0 290.0 L40.0 280.0 M236.0 290.0 L246.0 290.0 L246.0 280.0" fill="none" stroke="#5c2c33" stroke-width="2.2"/>
+<text y="110.0" font-size="15" font-weight="700"><tspan x="56.0" fill="#5c2c33">01 </tspan><tspan x="83.1" fill="#5c2c33">FRESH</tspan></text>
+<text y="134.0" font-size="13" font-weight="700"><tspan x="56.0" fill="#a8656e">Keypair.generate()</tspan></text>
+<text y="172.0" font-size="13" font-weight="700"><tspan x="56.0" fill="#5c2c33">SOL</tspan></text>
+<rect x="96" y="161" width="130" height="12" fill="#571520" fill-opacity="0.6"/>
+<text y="212.0" font-size="13" font-weight="700"><tspan x="56.0" fill="#5c2c33">TOK</tspan></text>
+<rect x="96" y="201" width="130" height="12" fill="#571520" fill-opacity="0.6"/>
+<line x1="52" y1="242" x2="234" y2="242" stroke="#571520" stroke-dasharray="3 3"/>
+<text y="270.0" font-size="13" font-weight="700"><tspan x="56.0" fill="#5c2c33">› </tspan><tspan x="71.7" fill="#ffe6e9">bundle.mjs</tspan></text>
+<path d="M250 185 L279 185" fill="none" stroke="#5c2c33" stroke-opacity="0.85" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="283.0" y="80.0" width="206.0" height="210.0" rx="8" fill="#120406" fill-opacity="0.85" stroke="#ff7a8c" stroke-opacity="0.8" stroke-width="1.4"/>
+<path d="M293.0 80.0 L283.0 80.0 L283.0 90.0 M479.0 80.0 L489.0 80.0 L489.0 90.0 M293.0 290.0 L283.0 290.0 L283.0 280.0 M479.0 290.0 L489.0 290.0 L489.0 280.0" fill="none" stroke="#ff7a8c" stroke-width="2.2"/>
+<text y="110.0" font-size="15" font-weight="700"><tspan x="299.0" fill="#5c2c33">02 </tspan><tspan x="326.1" fill="#ff7a8c">FUNDED</tspan></text>
+<text y="134.0" font-size="13" font-weight="700"><tspan x="299.0" fill="#a8656e">master → wallet</tspan></text>
+<text y="172.0" font-size="13" font-weight="700"><tspan x="299.0" fill="#5c2c33">SOL</tspan></text>
+<rect x="339" y="161" width="130" height="12" fill="#571520" fill-opacity="0.6"/>
+<rect x="339" y="161" width="130.0" height="12" fill="#ff7a8c" fill-opacity="0.85"/>
+<text y="212.0" font-size="13" font-weight="700"><tspan x="299.0" fill="#5c2c33">TOK</tspan></text>
+<rect x="339" y="201" width="130" height="12" fill="#571520" fill-opacity="0.6"/>
+<line x1="295" y1="242" x2="477" y2="242" stroke="#571520" stroke-dasharray="3 3"/>
+<text y="270.0" font-size="13" font-weight="700"><tspan x="299.0" fill="#ff7a8c">› </tspan><tspan x="314.7" fill="#ffe6e9">fund.mjs</tspan></text>
+<path d="M493 185 L522 185" fill="none" stroke="#ff7a8c" stroke-opacity="0.85" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="526.0" y="80.0" width="206.0" height="210.0" rx="8" fill="#120406" fill-opacity="0.85" stroke="#39ff88" stroke-opacity="0.8" stroke-width="1.4"/>
+<path d="M536.0 80.0 L526.0 80.0 L526.0 90.0 M722.0 80.0 L732.0 80.0 L732.0 90.0 M536.0 290.0 L526.0 290.0 L526.0 280.0 M722.0 290.0 L732.0 290.0 L732.0 280.0" fill="none" stroke="#39ff88" stroke-width="2.2"/>
+<text y="110.0" font-size="15" font-weight="700"><tspan x="542.0" fill="#5c2c33">03 </tspan><tspan x="569.1" fill="#39ff88">HOLDING</tspan></text>
+<text y="134.0" font-size="13" font-weight="700"><tspan x="542.0" fill="#a8656e">buy on curve</tspan></text>
+<text y="172.0" font-size="13" font-weight="700"><tspan x="542.0" fill="#5c2c33">SOL</tspan></text>
+<rect x="582" y="161" width="130" height="12" fill="#571520" fill-opacity="0.6"/>
+<rect x="582" y="161" width="15.6" height="12" fill="#ff7a8c" fill-opacity="0.85"/>
+<text y="212.0" font-size="13" font-weight="700"><tspan x="542.0" fill="#5c2c33">TOK</tspan></text>
+<rect x="582" y="201" width="130" height="12" fill="#571520" fill-opacity="0.6"/>
+<rect x="582" y="201" width="130.0" height="12" fill="#39ff88" fill-opacity="0.85"/>
+<line x1="538" y1="242" x2="720" y2="242" stroke="#571520" stroke-dasharray="3 3"/>
+<text y="270.0" font-size="13" font-weight="700"><tspan x="542.0" fill="#39ff88">› </tspan><tspan x="557.7" fill="#ffe6e9">tx.mjs</tspan></text>
+<path d="M736 185 L765 185" fill="none" stroke="#39ff88" stroke-opacity="0.85" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="769.0" y="80.0" width="206.0" height="210.0" rx="8" fill="#120406" fill-opacity="0.85" stroke="#ff9e3d" stroke-opacity="0.8" stroke-width="1.4"/>
+<path d="M779.0 80.0 L769.0 80.0 L769.0 90.0 M965.0 80.0 L975.0 80.0 L975.0 90.0 M779.0 290.0 L769.0 290.0 L769.0 280.0 M965.0 290.0 L975.0 290.0 L975.0 280.0" fill="none" stroke="#ff9e3d" stroke-width="2.2"/>
+<text y="110.0" font-size="15" font-weight="700"><tspan x="785.0" fill="#5c2c33">04 </tspan><tspan x="812.1" fill="#ff9e3d">SOLD</tspan></text>
+<text y="134.0" font-size="13" font-weight="700"><tspan x="785.0" fill="#a8656e">sell 100%</tspan></text>
+<text y="172.0" font-size="13" font-weight="700"><tspan x="785.0" fill="#5c2c33">SOL</tspan></text>
+<rect x="825" y="161" width="130" height="12" fill="#571520" fill-opacity="0.6"/>
+<rect x="825" y="161" width="123.5" height="12" fill="#ff7a8c" fill-opacity="0.85"/>
+<text y="212.0" font-size="13" font-weight="700"><tspan x="785.0" fill="#5c2c33">TOK</tspan></text>
+<rect x="825" y="201" width="130" height="12" fill="#571520" fill-opacity="0.6"/>
+<line x1="781" y1="242" x2="963" y2="242" stroke="#571520" stroke-dasharray="3 3"/>
+<text y="270.0" font-size="13" font-weight="700"><tspan x="785.0" fill="#ff9e3d">› </tspan><tspan x="800.7" fill="#ffe6e9">sell.mjs</tspan></text>
+<path d="M979 185 L1008 185" fill="none" stroke="#ff9e3d" stroke-opacity="0.85" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="1012.0" y="80.0" width="206.0" height="210.0" rx="8" fill="#120406" fill-opacity="0.85" stroke="#ff4fd8" stroke-opacity="0.8" stroke-width="1.4"/>
+<path d="M1022.0 80.0 L1012.0 80.0 L1012.0 90.0 M1208.0 80.0 L1218.0 80.0 L1218.0 90.0 M1022.0 290.0 L1012.0 290.0 L1012.0 280.0 M1208.0 290.0 L1218.0 290.0 L1218.0 280.0" fill="none" stroke="#ff4fd8" stroke-width="2.2"/>
+<text y="110.0" font-size="15" font-weight="700"><tspan x="1028.0" fill="#5c2c33">05 </tspan><tspan x="1055.1" fill="#ff4fd8">DRAINED</tspan></text>
+<text y="134.0" font-size="13" font-weight="700"><tspan x="1028.0" fill="#a8656e">sweep → master</tspan></text>
+<text y="172.0" font-size="13" font-weight="700"><tspan x="1028.0" fill="#5c2c33">SOL</tspan></text>
+<rect x="1068" y="161" width="130" height="12" fill="#571520" fill-opacity="0.6"/>
+<rect x="1068" y="161" width="3.9" height="12" fill="#ff7a8c" fill-opacity="0.85"/>
+<text y="212.0" font-size="13" font-weight="700"><tspan x="1028.0" fill="#5c2c33">TOK</tspan></text>
+<rect x="1068" y="201" width="130" height="12" fill="#571520" fill-opacity="0.6"/>
+<line x1="1024" y1="242" x2="1206" y2="242" stroke="#571520" stroke-dasharray="3 3"/>
+<text y="270.0" font-size="13" font-weight="700"><tspan x="1028.0" fill="#ff4fd8">› </tspan><tspan x="1043.7" fill="#ffe6e9">drain.mjs</tspan></text>
+<text y="340.0" font-size="13" font-weight="700"><tspan x="40.0" fill="#a8656e">fee reserve </tspan><tspan x="134.0" fill="#ffe6e9">0.01 SOL</tspan><tspan x="204.4" fill="#5c2c33">stays during buys</tspan><tspan x="376.7" fill="#a8656e">sell tops up gas </tspan><tspan x="509.8" fill="#5c2c33">if a wallet runs dry</tspan><tspan x="705.5" fill="#a8656e">drain keeps </tspan><tspan x="799.5" fill="#ffe6e9">5000 lamports</tspan><tspan x="909.1" fill="#5c2c33">for the fee</tspan></text>
+</g>
+</g></g><rect x="0.5" y="0.5" width="1259" height="379" rx="14" fill="url(#scan)" stroke="#571520"/></svg>

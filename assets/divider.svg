@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="32" viewBox="0 0 1260 32">
+<defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#ff2a4d" stop-opacity="0"/><stop offset="0.5" stop-color="#ff2a4d" stop-opacity="0.9"/><stop offset="1" stop-color="#ff2a4d" stop-opacity="0"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="1.4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect x="0.5" y="0.5" width="1259" height="31" rx="16" fill="#0b0304" stroke="#571520"/>
+<g filter="url(#glow)"><rect x="40" y="15.4" width="560.0" height="1.2" fill="url(#g)"/>
+<rect x="660.0" y="15.4" width="560.0" height="1.2" fill="url(#g)"/>
+<rect x="137" y="13" width="6" height="6" transform="rotate(45 140 16)" fill="#ff2a4d" fill-opacity="0.7"/>
+<rect x="327" y="13" width="6" height="6" transform="rotate(45 330 16)" fill="#ff2a4d" fill-opacity="0.7"/>
+<rect x="927" y="13" width="6" height="6" transform="rotate(45 930 16)" fill="#ff2a4d" fill-opacity="0.7"/>
+<rect x="1117" y="13" width="6" height="6" transform="rotate(45 1120 16)" fill="#ff2a4d" fill-opacity="0.7"/>
+<rect x="602.0" y="9" width="2" height="14" fill="#ff2a4d"/><rect x="656.0" y="9" width="2" height="14" fill="#ff2a4d"/>
+<rect x="614.0" y="11" width="6" height="6" fill="#ff2a4d"/>
+<rect x="622.0" y="16" width="6" height="6" fill="#ff2a4d"/>
+<rect x="630.0" y="11" width="6" height="6" fill="#3de8ff"/>
+<rect x="638.0" y="16" width="6" height="6" fill="#ff2a4d"/>
+</g></svg>
